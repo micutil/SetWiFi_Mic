@@ -27,10 +27,10 @@ M5Stack can do WiFi setting by [SmartConfig](https://docs.espressif.com/projects
 The smartphone app that you install is an application called Esptouch of the company Espressif of the ESP32 which is a microcomputer of M5Stack. Below is the download URL of iOS and Android of that App. It is easy for you to have the App installed.<br>
 (JP: インストールしていただくスマホのアプリはM5StackのマイコンであるESP32の会社のEspressifのEsptouchというアプリです。以下のURLからあらかじめインストールしておくと良いかもしれません。)
 
-Esptouch for iOS
+Esptouch for iOS<br>
 [https://itunes.apple.com/jp/app/id1071176700](https://itunes.apple.com/jp/app/id1071176700)
 
-Esptouch for Android
+Esptouch for Android<br>
 [https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk](https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk)
 
 ![MacDown logo](images/IMG_9563_2.png)   ![MacDown logo](images/IMG_9562_2.png)
