@@ -6,7 +6,14 @@ SetWiFi_MicはWiFi設定するためのM5Stackのプログラム。SSIDとパス
 
 ## How to enter SSID and Password
 ### 1, Input with serial monitor or terminal software
-SetWiFi_Micを起動すると以下の画像の様な画面になります。Arduinoのシリアルモニターや、一般的なターミナルソフトで、115200bpsで接続して、SSIDとパスワードを入力できます。
+When you start SetWiFi_Mic, it will look like the image below.
+1. You connect to M5Stack at 115,200 bps with Arduino's serial monitor or common terminal software.
+2. You can enter the SSID and password from the software.
+If you make a mistake, SetWiFi_Mic has no function such as "Delete" or "Backspace". In such a case, please press the A button and input from the beginning again.
+
+SetWiFi_Micを起動すると以下の画像の様な画面になります。
+1. Arduinoのシリアルモニターや、一般的なターミナルソフトで、115200bpsで接続します。
+2. そのソフトからSSIDとパスワードを入力します。
 なお、入力間違いした場合など、パックスペースなど効きかないので、Aボタンを押して最初から入力し直してください。
 
 ![MacDown logo](images/IMG_9566_2.png)
