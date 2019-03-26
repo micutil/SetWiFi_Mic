@@ -1,6 +1,7 @@
 # SetWiFi_Mic
 
-WiFiの設定を行うM5Stackのプログラムです。[SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)の呼び出しに対応しています。SetWiFi_MicをmicroSDに入れて、SD-Uploaderでロードしてお使いください。
+SetWiFi_Mic is an M5Stack program for setting up WiFi. Record the SSID and password on M5Stack's NVS (non-volatile storage device). SetWiFi_Mic supports calling of [SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater), so please put SetWiFi_Mic.bin file in microSD and load it using SD-Uploader. You can easily install [SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater) by using [M5Burner_Mic](https://github.com/micutil/M5Burner_Mic).<br>
+SetWiFi_MicはWiFi設定するためのM5Stackのプログラム。SSIDとパスワードをM5StackのNVS（不揮発記憶装置）に記録します。[SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)の呼び出しに対応しています。SetWiFi_MicをmicroSDに入れて、SD-Uploaderでロードしてお使いください。[M5Burner_Mic](https://github.com/micutil/M5Burner_Mic)を使うと[SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)を簡単にインストールでます。
 
 ## SSID, Passwordの入力方法
 ### １、シリアルモニター・ターミナルソフトで入力
