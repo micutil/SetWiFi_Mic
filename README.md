@@ -45,6 +45,7 @@ You can call the configured SSID and password with the following code (These are
 (JP: 設定したSSIDとパスワードは、以下のコードで呼び出すことができます（[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)のWiFi設定と同じです）。)
 
 ~~~
+#incluce <Preferences.h>
 Preferences preferences;<br>
 preferences.begin("wifi-config");<br>
 mySSID = preferences.getString("WIFI_SSID");<br>
