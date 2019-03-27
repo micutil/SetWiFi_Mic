@@ -44,11 +44,13 @@ Esptouch for Android<br>
 You can call the configured SSID and password with the following code (These are the same as WiFi settings of [LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)).<br>
 (JP: 設定したSSIDとパスワードは、以下のコードで呼び出すことができます（[LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)のWiFi設定と同じです）。)
 
+~~~
 Preferences preferences;<br>
 preferences.begin("wifi-config");<br>
 mySSID = preferences.getString("WIFI_SSID");<br>
 myPSWD = preferences.getString("WIFI_PASSWD");<br>
 preferences.end();<br>
+~~~
 
 ## License
 
