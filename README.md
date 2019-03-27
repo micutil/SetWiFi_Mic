@@ -46,11 +46,11 @@ You can call the configured SSID and password with the following code (These are
 
 ~~~
 #incluce <Preferences.h>
-Preferences preferences;<br>
-preferences.begin("wifi-config");<br>
-mySSID = preferences.getString("WIFI_SSID");<br>
-myPSWD = preferences.getString("WIFI_PASSWD");<br>
-preferences.end();<br>
+Preferences preferences;
+preferences.begin("wifi-config");
+mySSID = preferences.getString("WIFI_SSID");
+myPSWD = preferences.getString("WIFI_PASSWD");
+preferences.end();
 ~~~
 
 ## License
