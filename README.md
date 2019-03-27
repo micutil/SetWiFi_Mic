@@ -31,7 +31,7 @@ Esptouch for iOS<br>
 [https://itunes.apple.com/jp/app/id1071176700](https://itunes.apple.com/jp/app/id1071176700)
 
 Esptouch for Android<br>
-[https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk](https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk)
+[https://github.com/EspressifApp/EsptouchForAndroid/blob/master/releases/apk/esptouch.apk](https://github.com/EspressifApp/EsptouchForAndroid/blob/master/releases/apk/esptouch.apk)
 
 ![MacDown logo](images/IMG_9563_2.png)   ![MacDown logo](images/IMG_9562_2.png)
 
