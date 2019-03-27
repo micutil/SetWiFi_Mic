@@ -132,8 +132,8 @@ void drawEsptouchURL(int n) {
   }
   M5.Lcd.fillRect(0, 1, 320, 150, 0);
   if(a) M5.Lcd.qrcode("https://itunes.apple.com/jp/app/id1071176700", p, 10, 140, 3);
-  if(b) M5.Lcd.qrcode("https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk", q, 10, 140, 5);
-  ////M5.Lcd.qrcode("http://www.micutil.com/EspressifApp/EsptouchForAndroid/esptouch.apk", 180, 10, 140, 4);
+  if(b) M5.Lcd.qrcode("https://git.io/fjUSl", q, 10, 140, 3);
+  ////M5.Lcd.qrcode("https://github.com/micutil/EsptouchForAndroid/raw/master/releases/apk/esptouch.apk", 180, 10, 140, 4);
 }
 
 void smartConfigStart() {
