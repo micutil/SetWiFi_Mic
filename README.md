@@ -53,9 +53,11 @@ myPSWD = preferences.getString("WIFI_PASSWD");
 preferences.end();
 ~~~
 
+## History
+	ver 1.0.1: 2019/ 5/24 ODROID-GO compatible
+	ver 1.0.0: 2019/ 3/27
+
 ## License
 
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) Micono (http://github.com/micutil/SetWiFi_Mic).
-
-
 
