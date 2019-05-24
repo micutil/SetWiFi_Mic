@@ -2,6 +2,7 @@
  * Set WiFi with terminal software...
  * by micono
  * 
+ * ver 1.0.1 19/5/24 Odroid-GO compatible
  * ver 1.0.0 19/3/27
  * 
  * License
@@ -12,6 +13,15 @@
 
 #include <M5Stack.h>
 #include "M5StackUpdater.h"
+
+#ifdef ARDUINO_ODROID_ESP32
+  String DevName="ODROID-GO";
+  bool abcSel=true;
+#else
+  String DevName="M5Stack";
+  bool abcSel=false;
+#endif
+
 #include <WiFi.h>
 #include <Preferences.h>
 
@@ -19,6 +29,32 @@ int setstep=0;
 String apdata[]={ "", "" };
 
 int selmode=0;
+int abcNum=0;
+String btnName[2][3]={{" Cancel "," SmartConf "," Skip "},{" iOS "," Back "," Android "}};
+
+void setForeBackColor(int ps) {
+  uint16_t fc=TFT_WHITE;
+  uint16_t bc=TFT_BLACK;
+  if(abcSel) {
+    if(ps==abcNum) {
+      fc=TFT_BLACK;
+      bc=TFT_WHITE;
+    }
+  }
+  M5.Lcd.setTextColor(fc, bc);
+}
+
+void drawButtonMessage() {
+  M5.Lcd.setTextSize(1);
+  setForeBackColor(0);
+  M5.Lcd.drawCentreString(btnName[selmode][0], 70, 220, 2);
+  setForeBackColor(1);
+  M5.Lcd.drawCentreString(btnName[selmode][1], 160, 220, 2);
+  setForeBackColor(2);
+  M5.Lcd.drawCentreString(btnName[selmode][2], 250, 220, 2);
+  M5.Lcd.setTextColor(TFT_WHITE, TFT_BLACK);
+}
+
 
 void getAp(bool s, bool p) {
   Preferences preferences;
@@ -82,10 +118,8 @@ void DrawMessage() {
       M5.Lcd.print(" PASSWD: ");Serial.print(" PASSWD: ");
       break;
   }
-  M5.Lcd.setTextSize(1);
-  M5.Lcd.drawCentreString("Cancel", 70, 220, 2);
-  M5.Lcd.drawCentreString("SmartConf", 160, 220, 2);
-  M5.Lcd.drawCentreString("Skip", 250, 220, 2);
+  
+  drawButtonMessage();
 }
 
 void saveWiFiSetting() {
@@ -155,9 +189,10 @@ void smartConfigClose() {
 }
 
 void setup() {
-  Serial.begin(115200);
-  Serial.print("M5Stack initializing...");
   M5.begin();
+  Serial.print(DevName+" initializing...");
+  //M5.Speaker.setVolume(0);
+
   Wire.begin();
   if(digitalRead(BUTTON_A_PIN) == 0) {
     Serial.println("Will Load menu binary");
@@ -166,16 +201,27 @@ void setup() {
   }
 
   M5.Lcd.setTextSize(2);
-  
   wifiScan();
-  
   DrawSetting();
-
-  
 }
 
 void loop() {
   M5.update();
+
+  #ifdef ARDUINO_ODROID_ESP32
+  int joyXwasPressed=M5.JOY_X.wasAxisPressed();
+  if(joyXwasPressed==2) {
+    abcNum-=1;if(abcNum<0) abcNum=2;
+    drawButtonMessage();
+    return;
+  } else if(joyXwasPressed==1) {
+    abcNum+=1;if(abcNum>2) abcNum=0;
+    drawButtonMessage();
+    return;
+  }
+  
+  bool btnAwasPressed=M5.BtnA.wasPressed();
+  #endif
 
   switch(selmode) {
     case 0:
@@ -200,22 +246,32 @@ void loop() {
         }
       }
 
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==0&&btnAwasPressed) {
+      #else
       if(M5.BtnA.wasPressed()) {
+      #endif      
         setstep=0;
         DrawSetting();
       }
+      
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==1&&btnAwasPressed) {
+      #else
       if(M5.BtnB.wasPressed()) {
+      #endif      
         M5.Lcd.fillScreen(TFT_BLACK);
-        M5.Lcd.setTextSize(1);
-        M5.Lcd.drawCentreString("iOS(A)", 70, 220, 2);
-        M5.Lcd.drawCentreString("Back(B)", 160, 220, 2);
-        M5.Lcd.drawCentreString("Android(C)", 250, 220, 2);
-        drawEsptouchURL(2);
         selmode=1;
+        drawButtonMessage();
+        drawEsptouchURL(2);
         smartConfigStart();
       }
       
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==2&&btnAwasPressed) {
+      #else
       if(M5.BtnC.wasPressed()) {
+      #endif
         M5.Lcd.setTextSize(2);
         switch(setstep) {
           case 0:
@@ -240,13 +296,27 @@ void loop() {
       break;
 
     case 1://SmartConfig
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==0&&btnAwasPressed) {
+      #else
       if(M5.BtnA.wasPressed()) {
+      #endif      
         drawEsptouchURL(0);
       }
+
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==1&&btnAwasPressed) {
+      #else
       if(M5.BtnB.wasPressed()) {
+      #endif
         smartConfigClose();
       }
+
+      #ifdef ARDUINO_ODROID_ESP32
+      if(abcNum==2&&btnAwasPressed) {
+      #else
       if(M5.BtnC.wasPressed()) {
+      #endif
         drawEsptouchURL(1);
       }
 
@@ -265,4 +335,5 @@ void loop() {
         delay(10);
       }      
   }
+  
 }
