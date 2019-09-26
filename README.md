@@ -4,7 +4,7 @@
 
 SetWiFi_Mic is an M5Stack program for setting up WiFi. Record the SSID and password on M5Stack's NVS (non-volatile storage device). SetWiFi_Mic supports calling of [SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater), so please put SetWiFi_Mic.bin file in microSD and load it using SD-Uploader. You can easily install [SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater) by using [M5Burner_Mic](https://github.com/micutil/M5Burner_Mic).
 
-### Copy the built binnary progurams to microSD
+### Copy the built binnary program to microSD
 
 - Copy the files in the microSD folder to the root of microSD.
 - Set the microSD into the M5Stack / Odroid-GO
@@ -17,6 +17,7 @@ SetWiFi_Mic is an M5Stack program for setting up WiFi. Record the SSID and passw
 - in MF_Gamebin ... Fire defaut partition scheme
 - in OG_Gamebin ... Arduino program for Odroid-GO
 - in odroid/firmwares ... fw file for Odroid-GO
+
 
 ## How to enter SSID and Password
 ### 1, Input with serial monitor or terminal software
