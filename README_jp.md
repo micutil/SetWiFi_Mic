@@ -15,7 +15,7 @@ SetWiFi_MicはWiFi設定するためのM5Stackのプログラム。SSIDとパス
 
 - microSDフォルダの中のファイルをmicroSDのルートにコピー
 - microSDをM5StackまたはOdroid-GOにセット
-- LovyanLauncherでプログラムF/Wを選択して読み込む.
+- [LovyanLauncher](https://github.com/lovyan03/M5Stack_LovyanLauncher)でプログラムF/Wを選択して読み込む.
 - もしOdroid-GOメニューコントロールを使っている場合の操作は以下を見て下さい.
 
 ##### ODROID-GO Device Firmware Menu Controls
