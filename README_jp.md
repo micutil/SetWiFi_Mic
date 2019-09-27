@@ -4,19 +4,30 @@
 
 SetWiFi_MicはWiFi設定するためのM5Stackのプログラム。SSIDとパスワードをM5StackのNVS（不揮発記憶装置）に記録します。[SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)の呼び出しに対応しています。SetWiFi_MicをmicroSDに入れて、SD-Uploaderでロードしてお使いください。[M5Burner_Mic](https://github.com/micutil/M5Burner_Mic)を使うと[SD-Updater](https://github.com/tobozo/M5Stack-SD-Updater)を簡単にインストールでます。
 
-### ビルド済みプログラム
-- in M5_Gamebin ... 4M minimal SPIFFS partition scheme
-- in MD_Gamebin ... 4M default partition scheme
-- in MF_Gamebin ... Fire defaut partition scheme
-- in OG_Gamebin ... Arduino program for Odroid-GO
-- in odroid/firmwares ... fw file for Odroid-GO
+### ビルド済みファイル
+- in M5_Gamebin ... 4M minimal SPIFFS partition scheme.
+- in MD_Gamebin ... 4M default partition scheme.
+- in MF_Gamebin ... Fire defaut partition scheme.
+- in OG_Gamebin ... bin file for Odroid-GO.
+- in odroid/firmwares ... fw file for Odroid-GO Menu Control.
 
-#### ビルド済みプログラムの使い方
+### microSDにコピー
 
-- microSDフォルダの中のファイルをmicroSDのルートにコピー
-- そのmicroSDをM5StackまたはOdroid-GOに入れる
-- LovyanLauncherを使ってプログラムを選択して起動
-- Odroid-GO firmwareを使っている場合は、Bボタンを押したまま起動し、プログラムを選択して下さい。
+- Copy the files in the microSD folder to the root of microSD.
+- Set the microSD into the M5Stack / Odroid-GO
+- Select and launche the program with LovyanLauncher.
+- For the original Odroid-GO device firmware menu control, no launcher is needed (see below).
+
+##### ODROID-GO Device Firmware Menu Controls
+
+	1. 電源スイッチ OFF
+	2. Bボタンを押したまま, 電源スイッチ On
+	3. メニューが表示されたらBボタンを離す
+
+	アプリケーションF/Wの起動
+	- A ボタン: アプリケーションF/Wを選択
+	- B ボタン: キャンセル
+	- Start ボタン: アプリケーションF/Wの書き込み
 
 
 ## SSIDとPasswordの入力方法
